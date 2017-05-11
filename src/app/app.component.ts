@@ -28,9 +28,10 @@ import {MusicComponent}  from './MusicComponent';
 
   selector: 'app-root',
 
-  templateUrl: './app.component.html',
+  templateUrl: './html/app.component.html',
 
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./css/app.component.css'],
+
 
 })
 

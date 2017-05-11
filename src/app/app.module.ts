@@ -50,20 +50,12 @@ import {MusicComponent} from 'app/MusicComponent'
 
 import {RoutesApp } from './app.component'
 
-import {SearchComponent} from './Music/SearchComponent';
-
-import {ArtistComponent} from './Music/ArtistComponent';
-
-import {TrackComponent} from './Music/TrackComponent';
-
-import {AlbumComponent} from './Music/AlbumComponent';
-
-import { SPOTIFY_PROVIDERS } from './Music/SpotifyService';
-
 // manage dynamic element
+
 import {DragulaModule} from 'ng2-dragula';
 
 //manage calendar (in progress)
+
 import { DatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
@@ -71,7 +63,6 @@ import {HttpModule} from '@angular/http'
 
 //import {PagesModule} from 'app/Music/pages.module'
 
-import {SimpleHTTPComponent} from './http/SimpleHTTPComponent';
 
 
 //import {YouTubeSearchComponent} from './http/YouTubeSearchComponent';
@@ -115,13 +106,11 @@ const routes: Routes = [
 
 },
 
-{ path: 'music',      component: MusicComponent },
+{ path: 'documentazione',      component: MusicComponent },
 
  // { path: '', redirectTo: 'search', pathMatch: 'full' },
 
- { path: 'http',      component: SimpleHTTPComponent },
 
-{ path: 'login', component: LoginComponent },
 
  //  { path: 'register', component: RegisterComponent },
 
@@ -138,11 +127,6 @@ const routes: Routes = [
     LoginComponent,
     BasicExampleComponent,
     MusicComponent,
-    SearchComponent,
-    ArtistComponent,
-    TrackComponent,
-    AlbumComponent,
-  SimpleHTTPComponent,
 
   ],
   imports: [

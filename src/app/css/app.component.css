@@ -1,0 +1,29 @@
+header {
+    height: 70px;
+    background-color: darkcyan;    width: 100%;
+    font-size: 30px;
+    padding-top: 60px;
+    color: darkgoldenrod;
+    position: fixed;
+    z-index: 6;
+    margin-top: -39px;
+    margin-left: -9px;
+    padding-left: 61px;
+}
+
+a :hover { 
+    color: blue
+}
+
+a:visited { 
+    color: cornsilk;;
+    text-decoration:none ;
+    cursor: auto;
+    font-weight: 800;
+}
+
+a:active { 
+    text-decoration: underline;
+    cursor: auto;
+    color: blue
+}

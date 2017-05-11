@@ -1,50 +1,73 @@
-        <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
-  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 
-  <div class="loguser" *ngIf="authService.getUser()">
-    Welcome user <b>{{ authService.getUser() }}</b>
-    <a href (click)="logout()">Log out</a>
+<section>
+<div id="header-wrapper" class="header-slider">
+<div class="video-background">
+    <div class="video-foreground">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zDQBqaPYym0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" frameborder="0" allowfullscreen></iframe>
+
+   
+  <form class="form" *ngIf="!authService.getUser()">
+ 
+  <div class="">
+  
+      <label for="">INSERISCI I TUOI DATI</label>
+  
+  </div>
+      <label class="UP" for="">USERNAME:</label>
+  
+      <input class="" name="username" #username>
+  
+  
+  <div class="">
+  
+      <label for="">PASSWORD:</label>
+  
+      <input class="" type="password" name="password" #password>
+  
   </div>
   
-  <form class="login-form" *ngIf="!authService.getUser()">
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input class="form-control" name="username" #username>
-    </div>
-
-    <div class="form-group log-status">
-      <label for="password">Password:</label>
-      <input class="form-control" type="password" name="password" #password>
-    </div>
   <div class="alert" role="alert" *ngIf="message">
-    {{ message }}
-  </div>
-
-    <a class="log-btn" (click)="login(username.value, password.value)">
-                             Submit
-    </a>
-    <button g-login type="button">Google Login</button>
-<button linked-in type="button">LinkedIn Login</button>
-<button class="loginBtn--facebook" fb-login type="button" (click)="appconfig(fb-login)">facebook Login</button>
-  </form>
-
- <div>
   
-<div class="middle" *ngIf="authService.getUser()">
-      <div class='dragula' [dragula]='"first-bag"'>
-        <div class='dragula'>Informazioni riservate </div>
-      <div class='dragula1' [dragula]='"first-bag"'>
-        <div>Dati riservati</div>
-        <div>Poi muovere i dati come vuoi tu</div>
-      <div class='dragula1' [dragula]='"first-bag"'>
-        <div> A tuo piacimento</div>
-      </div>
-      </div>
+    {{ message }}
+  
   </div>
-</div>
+    <button class="red" (click)="login(username.value, password.value)">
+                             Submit
+    </button>
+        <button class='blue'  type="reset">
+                             RESET
+    </button>
 
-                
+</form>
+
+
+<div class="logged" *ngIf="authService.getUser()">
+
+    WELCOME USER <HR>
+    <b>{{ authService.getUser() }}</b>
+    <HR>
+    CHECK YOUR <a  routerLink="/private">Rubrica</a>
+
+    <button class="login blue"  (click)="logout()">Log out</button>
+    
+    </div>
+
+ </div>
+</div>
+</div>
+  
+
+</section>
+
+<section class="footer">
+  COPYRIGHT BY ALYT
+  P. IVA = 123456789
+  </section>
+
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src="js/index.js"></script>

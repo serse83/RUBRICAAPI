@@ -14,7 +14,7 @@ import {BasicExampleDataComponent} from './rubrica/basic-example-data.component'
 
   templateUrl: "./Rubrica/privatehome.html",
 
-  styleUrls: ['app.component.css'],
+  styleUrls: ['./css/login.css'],
 
 })
 

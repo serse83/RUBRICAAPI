@@ -30,7 +30,7 @@ import 'rxjs/add/operator/map';
 
    templateUrl: './login.html',
 
-   styleUrls: ['app.component.css']
+   styleUrls: ['./css/login.css']
 })
 
 export class LoginComponent {
@@ -84,31 +84,64 @@ export class LoginComponent {
 
 mes: string
 
-login(username: string, password: string)
+login(username: string, password: string): any {
 
-  {
+if(username.length=== 0 )
+{
+ 
+  this.message = 'INSERT USERNAME'
+}
+
+if(password.length===0)
+
+{  
+
+  this.message = 'INSERT PASSWORD'
+
+}
+
+if(username.length===0 && password.length===0 )
+
+{  
+  
+  this.message = 'INSERT USERNAME e PASSWORD'
+
+} 
+
+if( username.length != 0 && password.length != 0)  
+
+{
 
       let params = 'username=' + username + '&password='+ password ; 
 
       this.http.post('https://test.alyt.com:8443//ServerLYT/LYT_Server/WS_API/WS_login.php', params, { headers: this.headers })
 
 // additively subscribe to a specific channel, manage information.
- 
-      .subscribe( 
+    
+     .subscribe( 
 
 //sent data to the api e put the username into thee localstore
 
           data => console.log('Received:' + data, localStorage.setItem('username', username)),
-//message response in case of bad connection
-          (err) => console.log(this.mes = 'errore1'),
 
+//message response in case of bad connection
+
+          //(err) => console.log(JSON.parse(err))
+(err) => console.log(this.message=JSON.parse(err._body).ERROR_MESSAGE )
  );
 
-                }
+  }
+
+ }
+
 //logout            
+
   logout() 
+
       {
+
         localStorage.removeItem('username');
+
         return false
     }
 

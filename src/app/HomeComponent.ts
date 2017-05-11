@@ -4,8 +4,8 @@ import * as moment from 'moment';
 
 @Component({
   selector: 'home',
-    templateUrl: './HomeComponent.html',
-    styleUrls: ['./app.component.css']
+    templateUrl: './html/HomeComponent.html',
+    styleUrls: ['./css/app.component.css']
 })
 
 export class HomeComponent {
